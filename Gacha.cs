@@ -21,7 +21,7 @@ public class Gacha : MonoBehaviour
             gacha.onClick.AddListener(GetGacha);
         }
 
-        //else if (Timer.ticket == 0)
+        //else if (Timer.ticket == 0) // 조건문에 '&& 보유 골드량 >= 필요 골드량' 추가 필요
         //{
         //    GetComponent<Button>().interactable = true;
         //    GameObject.Find("Gacha").GetComponentInChildren<Text>().text = "골드 x개를 이용하여 뽑기 (보유 골드 수: y)"; //유료 재화로 뽑기, x: 필요량, y: 보유량
@@ -35,8 +35,15 @@ public class Gacha : MonoBehaviour
         }
     }
 
-    void GetGacha()
+    void GetGacha() //함수 추가 필요
     {
-        
+        if (Timer.ticket == 1)
+        {
+            Timer.ticket--;
+            //결과창 출력 후. return
+        }
+
+        //골드로 뽑을 때, 골드 감소 
+        //결과창 출력 후, return
     }
 }
